@@ -1,0 +1,26 @@
+.Header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.125rem #0000001c;
+}
+.Header__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.Header__title {
+  flex-grow: 1;
+}
+.Header__title > a {
+  text-decoration: none;
+}
+
+@media all and (min-width: 50rem) {
+  .Header__wrapper {
+    max-width: 64rem;
+    align-self: center;
+    margin: 0 auto;
+  }
+}

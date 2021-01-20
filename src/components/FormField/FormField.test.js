@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import App from "./App";
+import FormField from "./FormField";
 
-describe("App component", () => {
+describe("FormField component", () => {
   it("renders without error", () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<FormField />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

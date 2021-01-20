@@ -1,0 +1,7 @@
+.FormField {
+  display: flex;
+  flex-direction: column;
+}
+.FormField + .FormField {
+  margin-top: 1rem;
+}
