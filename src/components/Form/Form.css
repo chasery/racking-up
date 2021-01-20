@@ -1,0 +1,14 @@
+.Form {
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.0625rem 0.0625rem #0000001c;
+}
+.Form > button {
+  margin-top: 2rem;
+}
+
+@media all and (min-width: 30rem) {
+  .Form {
+    max-width: 18rem;
+  }
+}

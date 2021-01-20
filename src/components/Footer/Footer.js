@@ -3,12 +3,12 @@ import "./Footer.css";
 
 function Footer(props) {
   return (
-    <footer class="Footer" role="content-info">
-      <div class="Footer__wrapper">
-        <p class="Footer__copyright">
+    <footer className="Footer">
+      <div className="Footer__wrapper">
+        <p className="Footer__copyright">
           Copyright &copy; 2021 Chasery. All rights reserved.
         </p>
-        <div class="Footer__contact">
+        <div className="Footer__contact">
           <h3>Contact Us</h3>
           <ul>
             <li>

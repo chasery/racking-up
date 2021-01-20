@@ -2,19 +2,18 @@
 
 exports[`Footer component renders without error 1`] = `
 <footer
-  class="Footer"
-  role="content-info"
+  className="Footer"
 >
   <div
-    class="Footer__wrapper"
+    className="Footer__wrapper"
   >
     <p
-      class="Footer__copyright"
+      className="Footer__copyright"
     >
       Copyright © 2021 Chasery. All rights reserved.
     </p>
     <div
-      class="Footer__contact"
+      className="Footer__contact"
     >
       <h3>
         Contact Us

@@ -1,8 +1,5 @@
 body {
-  display: flex;
-  flex-direction: column;
   position: relative;
-  min-height: 100vh;
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   background-color: #fafafa;
@@ -38,4 +35,11 @@ ul {
 }
 ul > li {
   list-style: none;
+}
+
+/* React generated element */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

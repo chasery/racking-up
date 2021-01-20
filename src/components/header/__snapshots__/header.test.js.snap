@@ -2,14 +2,14 @@
 
 exports[`Header component renders without error 1`] = `
 <header
-  class="Header"
+  className="Header"
   role="banner"
 >
   <div
-    class="Header__wrapper"
+    className="Header__wrapper"
   >
     <h1
-      class="Header__title"
+      className="Header__title"
     >
       <a
         href="/"
@@ -18,7 +18,7 @@ exports[`Header component renders without error 1`] = `
       </a>
     </h1>
     <nav
-      class="Nav"
+      className="Nav"
       role="navigation"
     >
       <ul>
