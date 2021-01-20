@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders without error 1`] = `
+<header
+  class="Header"
+  role="banner"
+>
+  <div
+    class="Header__wrapper"
+  >
+    <h1
+      class="Header__title"
+    >
+      <a
+        href="/"
+      >
+        Racking Up
+      </a>
+    </h1>
+    <nav
+      class="Nav"
+      role="navigation"
+    >
+      <ul>
+        <li>
+          <a
+            href="/"
+          >
+            Sign In
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+`;
