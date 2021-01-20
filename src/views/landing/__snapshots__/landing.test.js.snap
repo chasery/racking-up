@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing component renders without error 1`] = `
-<h1>
-  Hello!
-</h1>
+<Fragment>
+  <h1
+    class="Hero"
+  >
+    Hello!
+  </h1>
+</Fragment>
 `;
