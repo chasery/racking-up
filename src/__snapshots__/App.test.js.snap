@@ -3,7 +3,17 @@
 exports[`App component renders without error 1`] = `
 <Fragment>
   <Header />
-  <Landing />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/racks"
+    />
+  </Switch>
   <Footer />
 </Fragment>
 `;

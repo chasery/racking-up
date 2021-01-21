@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header(props) {
@@ -11,7 +12,7 @@ function Header(props) {
         <nav className="Nav" role="navigation">
           <ul>
             <li>
-              <a href="/">Sign In</a>
+              <Link to="/racks">Sign In</Link>
             </li>
           </ul>
         </nav>

@@ -1,0 +1,20 @@
+.Rack__header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+}
+.Rack__headerName {
+  flex-grow: 1;
+}
+.Rack__headerCost {
+  padding-left: 0.75rem;
+}
+.Rack__headerArrow {
+  padding-left: 0.75rem;
+}
+
+.Rack__items {
+  padding: 0.5rem 1.5rem;
+  border-top: 0.0625rem solid #ebebeb;
+}
