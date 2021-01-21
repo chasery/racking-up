@@ -23,11 +23,11 @@ exports[`Header component renders without error 1`] = `
     >
       <ul>
         <li>
-          <a
-            href="/"
+          <Link
+            to="/racks"
           >
             Sign In
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
