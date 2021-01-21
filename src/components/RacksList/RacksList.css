@@ -1,14 +1,25 @@
-.Form {
-  padding: 1.5rem;
-  background-color: #fff;
-  box-shadow: 0 0.0625rem 0.0625rem #0000001c;
+.RacksList {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
 }
-.Form > button {
-  margin-top: 2rem;
+.RacksList > li {
+  align-self: start;
+  list-style: none;
+  box-shadow: 0 0.0625rem 0.0625rem #0000001c;
+  background-color: #fff;
 }
 
-@media all and (min-width: 30rem) {
-  .Form {
-    max-width: 18rem;
+@media all and (min-width: 50rem) {
+  .RacksList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (min-width: 64rem) {
+  .RacksList {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rack component renders without error 1`] = `
+<li
+  className="Rack"
+>
+  <Link
+    to="/rack/undefined"
+  >
+    <div
+      className="Rack__header"
+    >
+      <div
+        className="Rack__headerName"
+      />
+      <div
+        className="Rack__headerCost"
+      >
+        $0
+      </div>
+      <div
+        className="Rack__headerArrow"
+      >
+        -&gt;
+      </div>
+    </div>
+  </Link>
+  <ul
+    className="Rack__items"
+  >
+    <RackItem
+      name="No Clothing"
+    />
+  </ul>
+</li>
+`;

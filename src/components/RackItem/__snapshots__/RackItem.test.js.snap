@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RackItem component renders without error 1`] = `
+<li
+  className="RackItem"
+>
+  <a
+    className="RackItem__name"
+    target="_blank"
+  />
+</li>
+`;

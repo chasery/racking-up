@@ -5,8 +5,12 @@ import "./Racks.css";
 function Racks(props) {
   return (
     <main role="main">
-      <h2>Racks</h2>
-      <RacksList />
+      <section className="Racks">
+        <div className="Racks__wrapper">
+          <h3>My Racks</h3>
+          <RacksList />
+        </div>
+      </section>
     </main>
   );
 }
