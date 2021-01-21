@@ -6,6 +6,7 @@ exports[`RackItem component renders without error 1`] = `
 >
   <a
     className="RackItem__name"
+    rel="noreferrer"
     target="_blank"
   />
 </li>

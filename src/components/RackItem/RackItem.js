@@ -8,7 +8,7 @@ function RackItem(props) {
 
   return (
     <li className="RackItem">
-      <a className="RackItem__name" href={url} target="_blank">
+      <a className="RackItem__name" href={url} target="_blank" rel="noreferrer">
         {name}
       </a>
       {price ? <div className="RackItem__price">{formattedPrice}</div> : ""}

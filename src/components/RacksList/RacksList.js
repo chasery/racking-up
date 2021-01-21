@@ -1,6 +1,6 @@
 import React from "react";
-import "./RacksList.css";
 import Rack from "../Rack/Rack";
+import "./RacksList.css";
 
 const racksData = [
   {
@@ -24,7 +24,12 @@ function createRacks(racks) {
 }
 
 function RacksList(props) {
-  return <ol className="RacksList">{createRacks(racksData)}</ol>;
+  return (
+    <ol className="RacksList">
+      {createRacks(racksData)}
+      <li className="RacksList__add">+ Add Rack</li>
+    </ol>
+  );
 }
 
 export default RacksList;

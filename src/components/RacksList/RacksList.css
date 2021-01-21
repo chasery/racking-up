@@ -12,6 +12,11 @@
   box-shadow: 0 0.0625rem 0.0625rem #0000001c;
   background-color: #fff;
 }
+.RacksList__add {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
 
 @media all and (min-width: 50rem) {
   .RacksList {
