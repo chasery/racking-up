@@ -18,7 +18,7 @@ const racksData = [
   },
 ];
 
-function createRacks(racks) {
+function renderRacks(racks) {
   return racks.map((rack) => (
     <Rack key={rack.id} id={rack.id} name={rack.rackName} />
   ));
@@ -27,7 +27,7 @@ function createRacks(racks) {
 function RacksList(props) {
   return (
     <ol className="RacksList">
-      {createRacks(racksData)}
+      {renderRacks(racksData)}
       <li className="RacksList__add">
         <Link to="/add-rack">+ Add Rack</Link>
       </li>

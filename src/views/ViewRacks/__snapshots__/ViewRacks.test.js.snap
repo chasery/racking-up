@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Racks component renders without error 1`] = `
+exports[`ViewRacks component renders without error 1`] = `
 <main
   role="main"
 >
   <section
-    className="Racks"
+    className="ViewRacks"
   >
     <div
-      className="Racks__wrapper"
+      className="ViewRacks__wrapper"
     >
       <h3>
         My Racks

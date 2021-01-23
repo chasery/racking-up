@@ -8,14 +8,14 @@
 }
 .RacksList > li {
   align-self: start;
-  list-style: none;
-  box-shadow: 0 0.0625rem 0.0625rem #0000001c;
-  background-color: #fff;
 }
 .RacksList__add {
   padding: 1rem 1.5rem;
-  text-align: center;
+  list-style: none;
+  box-shadow: 0 0.0625rem 0.0625rem #0000001c;
+  background-color: #fff;
   font-weight: bold;
+  text-align: center;
 }
 
 @media all and (min-width: 50rem) {

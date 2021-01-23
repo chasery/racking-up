@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import RackItem from "../RackItem/RackItem";
 import { currencyFormat } from "../../currencyFormat";
 import "./Rack.css";
@@ -77,24 +77,33 @@ const getRackCost = (items) => {
 };
 
 function Rack(props) {
+  const { rackId } = useParams();
   const { id, name } = props;
   const rackItems = clothingArr.filter((item) => item.rackId === props.id);
 
   return (
     <li className="Rack">
-      <Link to={`/rack/${id}`}>
+      {rackId ? (
         <div className="Rack__header">
-          <div className="Rack__headerName">{name}</div>
-          <div className="Rack__headerCost">{getRackCost(rackItems)}</div>
-          <div className="Rack__headerArrow">-></div>
+          <Link to={`/racks`} className="Rack__headerArrow">
+            {"<-"}
+          </Link>
+          <span className="Rack__headerName">{name}</span>
+          <span className="Rack__headerCost">{getRackCost(rackItems)}</span>
+          <div className="Rack__headerControls">
+            <button>E</button>
+            <button>D</button>
+          </div>
         </div>
-      </Link>
+      ) : (
+        <Link to={`/racks/${id}`} className="Rack__header">
+          <span className="Rack__headerName">{name}</span>
+          <span className="Rack__headerCost">{getRackCost(rackItems)}</span>
+          <span className="Rack__headerArrow">{"->"}</span>
+        </Link>
+      )}
       <ul className="Rack__items">
-        {rackItems.length ? (
-          createRackItems(rackItems)
-        ) : (
-          <RackItem name="No Clothing" />
-        )}
+        {rackItems.length ? createRackItems(rackItems) : <RackItem />}
       </ul>
     </li>
   );

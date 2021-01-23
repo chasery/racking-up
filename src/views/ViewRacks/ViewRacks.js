@@ -1,12 +1,12 @@
 import React from "react";
 import RacksList from "../../components/RacksList/RacksList";
-import "./Racks.css";
+import "./ViewRacks.css";
 
-function Racks(props) {
+function ViewRacks(props) {
   return (
     <main role="main">
-      <section className="Racks">
-        <div className="Racks__wrapper">
+      <section className="ViewRacks">
+        <div className="ViewRacks__wrapper">
           <h3>My Racks</h3>
           <RacksList />
         </div>
@@ -15,4 +15,4 @@ function Racks(props) {
   );
 }
 
-export default Racks;
+export default ViewRacks;

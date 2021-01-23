@@ -4,8 +4,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Landing from "./views/Landing/Landing";
 import SignIn from "./views/SignIn/SignIn";
-import Racks from "./views/Racks/Racks";
+import ViewRacks from "./views/ViewRacks/ViewRacks";
 import AddRack from "./views/AddRack/AddRack";
+import ViewRack from "./views/ViewRack/ViewRack";
 import AddRackItem from "./views/AddRackItem/AddRackItem";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/sign-in" component={SignIn} />
-        <Route path="/racks" component={Racks} />
+        <Route exact path="/racks" component={ViewRacks} />
+        <Route path="/racks/:rackId" component={ViewRack} />
         <Route path="/add-rack" component={AddRack} />
         <Route path="/add-rack-item" component={AddRackItem} />
       </Switch>

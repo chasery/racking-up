@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import Racks from "./Racks";
+import ViewRacks from "./ViewRacks";
 
-describe("Racks component", () => {
+describe("ViewRacks component", () => {
   it("renders without error", () => {
-    const wrapper = shallow(<Racks />);
+    const wrapper = shallow(<ViewRacks />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
