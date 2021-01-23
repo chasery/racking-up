@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRack component renders without error 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="AddRack"
+  >
+    <div
+      className="AddRack__wrapper"
+    >
+      <Form
+        id="AddRack"
+      >
+        <h2>
+          Add Rack
+        </h2>
+        <p>
+          Enter the name of the rack you would like to add.
+        </p>
+        <FormField
+          id="name"
+          isRequired={true}
+          label="Name"
+          type="text"
+        />
+        <button>
+          Cancel
+        </button>
+        <button>
+          Add Rack
+        </button>
+      </Form>
+    </div>
+  </section>
+</main>
+`;

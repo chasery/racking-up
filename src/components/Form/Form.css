@@ -6,6 +6,9 @@
 .Form > button {
   margin-top: 2rem;
 }
+.Form > button + button {
+  margin-left: 0.5rem;
+}
 
 @media all and (min-width: 30rem) {
   .Form {

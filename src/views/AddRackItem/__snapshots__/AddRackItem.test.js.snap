@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRackItem component renders without error 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="AddRackItem"
+  >
+    <div
+      className="AddRackItem__wrapper"
+    >
+      <Form
+        id="AddRackItem"
+      >
+        <h2>
+          Add Rack Item
+        </h2>
+        <p>
+          Enter the information for the clothing item you would like to add.
+        </p>
+        <FormField
+          id="name"
+          isRequired={true}
+          label="Name"
+          type="text"
+        />
+        <FormField
+          id="url"
+          isRequired={true}
+          label="URL"
+          type="text"
+        />
+        <FormField
+          id="price"
+          isRequired={true}
+          label="Price"
+          type="text"
+        />
+        <button>
+          Cancel
+        </button>
+        <button>
+          Add Rack Item
+        </button>
+      </Form>
+    </div>
+  </section>
+</main>
+`;

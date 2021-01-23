@@ -10,7 +10,7 @@ function SignIn(props) {
       <section className="SignIn">
         <div className="SignIn__wrapper">
           <Form id="SignIn">
-            <h2>Sign in</h2>
+            <h2>Sign In</h2>
             <p>Enter your Racking Up account credentials below to sign in.</p>
             <FormField id="email" label="Email" type="text" isRequired={true} />
             <FormField

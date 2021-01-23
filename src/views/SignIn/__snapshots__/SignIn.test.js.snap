@@ -14,7 +14,7 @@ exports[`SignIn component renders without error 1`] = `
         id="SignIn"
       >
         <h2>
-          Sign in
+          Sign In
         </h2>
         <p>
           Enter your Racking Up account credentials below to sign in.

@@ -22,7 +22,11 @@ exports[`RacksList component renders without error 1`] = `
   <li
     className="RacksList__add"
   >
-    + Add Rack
+    <Link
+      to="/add-rack"
+    >
+      + Add Rack
+    </Link>
   </li>
 </ol>
 `;
