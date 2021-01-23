@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Rack from "../Rack/Rack";
 import "./RacksList.css";
 
@@ -27,7 +28,9 @@ function RacksList(props) {
   return (
     <ol className="RacksList">
       {createRacks(racksData)}
-      <li className="RacksList__add">+ Add Rack</li>
+      <li className="RacksList__add">
+        <Link to="/add-rack">+ Add Rack</Link>
+      </li>
     </ol>
   );
 }

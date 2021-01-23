@@ -1,0 +1,17 @@
+.AddRackItem {
+  padding-top: 3.75rem;
+}
+
+.AddRackItem__wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+}
+
+@media all and (min-width: 50rem) {
+  .AddRackItem__wrapper {
+    max-width: 64rem;
+    align-self: center;
+    margin: 0 auto;
+  }
+}
