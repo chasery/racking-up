@@ -15,7 +15,12 @@ exports[`App component renders without error 1`] = `
     />
     <Route
       component={[Function]}
+      exact={true}
       path="/racks"
+    />
+    <Route
+      component={[Function]}
+      path="/racks/:rackId"
     />
     <Route
       component={[Function]}
