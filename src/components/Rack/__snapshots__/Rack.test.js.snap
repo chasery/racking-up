@@ -25,9 +25,7 @@ exports[`Rack component renders without error 1`] = `
   <ul
     className="Rack__items"
   >
-    <RackItem
-      name="No Clothing"
-    />
+    <RackItem />
   </ul>
 </li>
 `;

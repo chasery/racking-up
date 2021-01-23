@@ -4,10 +4,10 @@ exports[`RackItem component renders without error 1`] = `
 <li
   className="RackItem"
 >
-  <a
-    className="RackItem__name"
-    rel="noreferrer"
-    target="_blank"
-  />
+  <span
+    className="RackItem__infoName"
+  >
+    This rack has no clothing items.
+  </span>
 </li>
 `;

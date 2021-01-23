@@ -8,7 +8,6 @@ jest.mock("react-router-dom", () => ({
   useParams: () => ({
     rackId: "1",
   }),
-  useRouteMatch: () => ({ url: "/company/company-id1/team/team-id1" }),
 }));
 
 describe("ViewRack component", () => {

@@ -90,6 +90,10 @@ function Rack(props) {
           </Link>
           <span className="Rack__headerName">{name}</span>
           <span className="Rack__headerCost">{getRackCost(rackItems)}</span>
+          <div className="Rack__headerControls">
+            <button>E</button>
+            <button>D</button>
+          </div>
         </div>
       ) : (
         <Link to={`/racks/${id}`} className="Rack__header">
@@ -99,11 +103,7 @@ function Rack(props) {
         </Link>
       )}
       <ul className="Rack__items">
-        {rackItems.length ? (
-          createRackItems(rackItems)
-        ) : (
-          <RackItem name="No Clothing" />
-        )}
+        {rackItems.length ? createRackItems(rackItems) : <RackItem />}
       </ul>
     </li>
   );
