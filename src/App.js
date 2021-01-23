@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Landing from "./views/Landing/Landing";
 import Racks from "./views/Racks/Racks";
+import SignIn from "./views/SignIn/SignIn";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/racks" component={Racks} />
+        <Route path="/sign-in" component={SignIn} />
       </Switch>
       <Footer />
     </>

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn component renders without error 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="SignIn"
+  >
+    <div
+      className="SignIn__wrapper"
+    >
+      <Form
+        id="SignIn"
+      >
+        <h2>
+          Sign in
+        </h2>
+        <p>
+          Enter your Racking Up account credentials below to sign in.
+        </p>
+        <FormField
+          id="email"
+          isRequired={true}
+          label="Email"
+          type="text"
+        />
+        <FormField
+          id="password"
+          isRequired={true}
+          label="Password"
+          type="password"
+        />
+        <button>
+          Sign In
+        </button>
+        <p
+          class="Form__footer"
+        >
+          Don't have an account? Sign up for a Racking Up account
+           
+          <Link
+            to="/"
+          >
+            here
+          </Link>
+          .
+        </p>
+      </Form>
+    </div>
+  </section>
+</main>
+`;

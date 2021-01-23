@@ -44,11 +44,12 @@ exports[`Landing component renders without error 1`] = `
           className="Form__footer"
         >
           Already have an account? Sign in to your Racking Up account
-          <a
-            href="sign-in.html"
+           
+          <Link
+            to="/sign-in"
           >
             here
-          </a>
+          </Link>
           .
         </p>
       </Form>
