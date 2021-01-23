@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import FormField from "../../components/FormField/FormField";
 import "./Landing.css";
@@ -29,8 +30,8 @@ function Landing(props) {
             />
             <button>Sign Up</button>
             <p className="Form__footer">
-              Already have an account? Sign in to your Racking Up account
-              <a href="sign-in.html">here</a>.
+              Already have an account? Sign in to your Racking Up account{" "}
+              <Link to="/sign-in">here</Link>.
             </p>
           </Form>
         </div>

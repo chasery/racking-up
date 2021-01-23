@@ -13,6 +13,10 @@ exports[`App component renders without error 1`] = `
       component={[Function]}
       path="/racks"
     />
+    <Route
+      component={[Function]}
+      path="/sign-in"
+    />
   </Switch>
   <Footer />
 </Fragment>
