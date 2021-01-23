@@ -1,0 +1,15 @@
+.ViewRack {
+  padding-top: 3.75rem;
+}
+
+.ViewRack__wrapper {
+  padding: 1rem 1.5rem;
+}
+
+@media all and (min-width: 50rem) {
+  .ViewRack__wrapper {
+    max-width: 64rem;
+    align-self: center;
+    margin: 0 auto;
+  }
+}
