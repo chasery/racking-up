@@ -23,19 +23,25 @@ exports[`EditRackItem component renders without error 1`] = `
           id="name"
           isRequired={true}
           label="Name"
+          onChange={[Function]}
           type="text"
+          value=""
         />
         <FormField
           id="url"
           isRequired={true}
           label="URL"
+          onChange={[Function]}
           type="text"
+          value=""
         />
         <FormField
           id="price"
           isRequired={true}
           label="Price"
+          onChange={[Function]}
           type="text"
+          value=""
         />
         <button>
           Cancel
