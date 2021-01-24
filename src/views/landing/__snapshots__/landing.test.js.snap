@@ -23,19 +23,25 @@ exports[`Landing component renders without error 1`] = `
           id="email"
           isRequired={true}
           label="Email"
-          type="text"
+          onChange={[Function]}
+          type="email"
+          value=""
         />
         <FormField
           id="password"
           isRequired={true}
           label="Password"
+          onChange={[Function]}
           type="password"
+          value=""
         />
         <FormField
           id="passwordConfirm"
           isRequired={true}
           label="Password (Confirm)"
+          onChange={[Function]}
           type="password"
+          value=""
         />
         <button>
           Sign Up
