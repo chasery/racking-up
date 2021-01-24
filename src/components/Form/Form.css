@@ -2,6 +2,7 @@
   padding: 1.5rem;
   background-color: #fff;
   box-shadow: 0 0.0625rem 0.0625rem #0000001c;
+  min-width: calc(100% - 3rem);
 }
 .Form > button {
   margin-top: 2rem;
@@ -12,6 +13,7 @@
 
 @media all and (min-width: 30rem) {
   .Form {
+    min-width: 18rem;
     max-width: 18rem;
   }
 }

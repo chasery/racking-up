@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import RackItem from "../RackItem/RackItem";
 import { currencyFormat } from "../../currencyFormat";
 import "./Rack.css";
@@ -9,49 +9,49 @@ const clothingArr = [
     id: 1,
     rackId: 1,
     name: "H&M Navy Hoody",
-    url: "http://localhost:3000/racks",
+    url: "https://www2.hm.com/en_us/index.html",
     price: 50.0,
   },
   {
     id: 2,
     rackId: 1,
     name: "Columbia Rain Jacket",
-    url: "http://localhost:3000/racks",
+    url: "https://www.columbia.com/",
     price: 75.0,
   },
   {
     id: 3,
     rackId: 1,
     name: "Mountain Hardware Long Sleeve Shirt",
-    url: "http://localhost:3000/racks",
+    url: "https://www.mountainhardwear.com/",
     price: 25.0,
   },
   {
     id: 4,
     rackId: 1,
     name: "APC Raw Denim Jeans",
-    url: "http://localhost:3000/racks",
+    url: "https://www.apc-us.com/collections/men-denim",
     price: 200.0,
   },
   {
     id: 5,
     rackId: 2,
     name: "H&M V Neck Tshirts",
-    url: "http://localhost:3000/racks",
+    url: "https://www2.hm.com/en_us/index.html",
     price: 25.0,
   },
   {
     id: 6,
     rackId: 2,
     name: "Express Oxford Shirt",
-    url: "http://localhost:3000/racks",
+    url: "https://www.express.com/",
     price: 25.0,
   },
   {
     id: 7,
     rackId: 2,
     name: "Prana Dock Shorts",
-    url: "http://localhost:3000/racks",
+    url: "https://www.prana.com/",
     price: 75.0,
   },
 ];
@@ -77,6 +77,7 @@ const getRackCost = (items) => {
 };
 
 function Rack(props) {
+  const history = useHistory();
   const { rackId } = useParams();
   const { id, name } = props;
   const rackItems = clothingArr.filter((item) => item.rackId === props.id);
@@ -91,7 +92,9 @@ function Rack(props) {
           <span className="Rack__headerName">{name}</span>
           <span className="Rack__headerCost">{getRackCost(rackItems)}</span>
           <div className="Rack__headerControls">
-            <button>E</button>
+            <button onClick={() => history.push(`/edit-rack/${rackId}`)}>
+              E
+            </button>
             <button>D</button>
           </div>
         </div>
