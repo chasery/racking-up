@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditRackItem component renders without error 1`] = `
+<main
+  role="main"
+>
+  <section
+    className="EditRackItem"
+  >
+    <div
+      className="EditRackItem__wrapper"
+    >
+      <Form
+        id="EditRackItem"
+      >
+        <h2>
+          Edit Rack Item
+        </h2>
+        <p>
+          Edit the information for the clothing item.
+        </p>
+        <FormField
+          id="name"
+          isRequired={true}
+          label="Name"
+          type="text"
+        />
+        <FormField
+          id="url"
+          isRequired={true}
+          label="URL"
+          type="text"
+        />
+        <FormField
+          id="price"
+          isRequired={true}
+          label="Price"
+          type="text"
+        />
+        <button>
+          Cancel
+        </button>
+        <button>
+          Edit Rack Item
+        </button>
+      </Form>
+    </div>
+  </section>
+</main>
+`;

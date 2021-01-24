@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { currencyFormat } from "../../currencyFormat";
 import "./RackItem.css";
 
 function RackItem(props) {
+  const history = useHistory();
   const { rackId } = useParams();
-  const { name, url, price } = props;
+  const { id, name, url, price } = props;
   const formattedPrice = currencyFormat.format(price);
 
   if (name && url && price) {
@@ -24,7 +25,9 @@ function RackItem(props) {
         </a>
         {rackId && (
           <div className="RackItem__controls">
-            <button>E</button>
+            <button onClick={() => history.push(`/edit-rack-item/${id}`)}>
+              E
+            </button>
             <button>D</button>
           </div>
         )}

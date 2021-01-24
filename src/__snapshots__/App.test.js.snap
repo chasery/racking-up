@@ -28,7 +28,15 @@ exports[`App component renders without error 1`] = `
     />
     <Route
       component={[Function]}
+      path="/edit-rack/:rackId"
+    />
+    <Route
+      component={[Function]}
       path="/add-rack-item"
+    />
+    <Route
+      component={[Function]}
+      path="/edit-rack-item/:rackItemId"
     />
   </Switch>
   <Footer />
