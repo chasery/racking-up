@@ -1,33 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import RackingUpContext from "../../RackingUpContext";
 import Rack from "../Rack/Rack";
 import "./RacksList.css";
 
-const racksData = [
-  {
-    id: 1,
-    rackName: "Fall 2021",
-  },
-  {
-    id: 2,
-    rackName: "Summer 2021",
-  },
-  {
-    id: 3,
-    rackName: "Anniversary Outfit",
-  },
-];
-
-function renderRacks(racks) {
-  return racks.map((rack) => (
-    <Rack key={rack.id} id={rack.id} name={rack.rackName} />
-  ));
-}
-
 function RacksList(props) {
+  const context = useContext(RackingUpContext);
+
+  const renderRacks = (racks) => {
+    return racks.map((rack) => (
+      <Rack key={rack.id} id={rack.id} name={rack.rackName} />
+    ));
+  };
+
   return (
     <ol className="RacksList">
-      {renderRacks(racksData)}
+      {renderRacks(context.racks)}
       <li className="RacksList__add">
         <Link to="/add-rack">+ Add Rack</Link>
       </li>

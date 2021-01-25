@@ -7,7 +7,7 @@ exports[`RackItem component renders without error 1`] = `
   <span
     className="RackItem__infoName"
   >
-    This rack has no clothing items.
+    This rack has no items.
   </span>
 </li>
 `;

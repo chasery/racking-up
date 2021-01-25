@@ -4,21 +4,6 @@ exports[`RacksList component renders without error 1`] = `
 <ol
   className="RacksList"
 >
-  <Rack
-    id={1}
-    key="1"
-    name="Fall 2021"
-  />
-  <Rack
-    id={2}
-    key="2"
-    name="Summer 2021"
-  />
-  <Rack
-    id={3}
-    key="3"
-    name="Anniversary Outfit"
-  />
   <li
     className="RacksList__add"
   >
