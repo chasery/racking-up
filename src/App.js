@@ -79,16 +79,26 @@ function App() {
     },
   ]);
 
-  const addRack = (rack) => {
-    console.log(rack);
-    return setRacks((prevRacks) => [...prevRacks, rack]);
-  };
+  const addRack = (rack) => setRacks((prevRacks) => [...prevRacks, rack]);
+  // const editRack = (rack) => {};
+  // const deleteRack = (rackId) => {};
+
+  const addRackItem = (rackItem) =>
+    setRackItems((prevRackItems) => [...prevRackItems, rackItem]);
+  // const editRackItem = (rackItem) => {};
+  // const deleteRackItem = (rackItemId) => {};
 
   const contextValue = {
-    racks: racks,
-    rackItems: rackItems,
-    addRack: addRack,
+    racks,
+    rackItems,
+    addRack,
+    // editRack: () => {},
+    // deleteRack: () => {},
+    addRackItem,
+    // editRackItem: () => {},
+    // deleteRackItem: () => {},
   };
+
   return (
     <>
       <RakcingUpContext.Provider value={contextValue}>
@@ -100,7 +110,7 @@ function App() {
           <Route path="/racks/:rackId" component={ViewRack} />
           <Route path="/add-rack" component={AddRack} />
           <Route path="/edit-rack/:rackId" component={EditRack} />
-          <Route path="/add-rack-item" component={AddRackItem} />
+          <Route path="/add-rack-item/:rackId" component={AddRackItem} />
           <Route path="/edit-rack-item/:rackItemId" component={EditRackItem} />
         </Switch>
         <Footer />

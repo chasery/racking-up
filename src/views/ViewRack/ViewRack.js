@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import RackingUpContext from "../../RackingUpContext";
 import Rack from "../../components/Rack/Rack";
 import "./ViewRack.css";
@@ -17,7 +17,14 @@ function ViewRack(props) {
   return (
     <main role="main">
       <section className="ViewRack">
-        <div className="ViewRack__wrapper">{renderRack(rackId)}</div>
+        <div className="ViewRack__wrapper">
+          <ol className="ViewRack__rack">
+            {renderRack(rackId)}
+            <li className="ViewRack__add">
+              <Link to={`/add-rack-item/${rackId}`}>+ Add Rack Item</Link>
+            </li>
+          </ol>
+        </div>
       </section>
     </main>
   );
