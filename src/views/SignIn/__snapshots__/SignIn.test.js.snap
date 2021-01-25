@@ -23,19 +23,23 @@ exports[`SignIn component renders without error 1`] = `
           id="email"
           isRequired={true}
           label="Email"
-          type="text"
+          onChange={[Function]}
+          type="email"
+          value=""
         />
         <FormField
           id="password"
           isRequired={true}
           label="Password"
+          onChange={[Function]}
           type="password"
+          value=""
         />
         <button>
           Sign In
         </button>
         <p
-          class="Form__footer"
+          className="Form__footer"
         >
           Don't have an account? Sign up for a Racking Up account
            

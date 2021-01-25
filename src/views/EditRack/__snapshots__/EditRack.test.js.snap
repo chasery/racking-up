@@ -23,7 +23,9 @@ exports[`EditRack component renders without error 1`] = `
           id="name"
           isRequired={true}
           label="Name"
+          onChange={[Function]}
           type="text"
+          value=""
         />
         <button>
           Cancel

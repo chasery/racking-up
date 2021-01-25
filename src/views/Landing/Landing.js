@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "../../components/Form/Form";
 import FormField from "../../components/FormField/FormField";
 import "./Landing.css";
 
 function Landing(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConf, setPasswordConf] = useState("");
+
   return (
     <main role="main">
       <section className="Hero">
@@ -15,18 +19,29 @@ function Landing(props) {
               Creating an account for Racking Up is easy! Fill out the
               information below to create an account.
             </p>
-            <FormField id="email" label="Email" type="text" isRequired={true} />
+            <FormField
+              id="email"
+              label="Email"
+              type="email"
+              isRequired={true}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
             <FormField
               id="password"
               label="Password"
               type="password"
               isRequired={true}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
             <FormField
               id="passwordConfirm"
               label="Password (Confirm)"
               type="password"
               isRequired={true}
+              onChange={(e) => setPasswordConf(e.target.value)}
+              value={passwordConf}
             />
             <button>Sign Up</button>
             <p className="Form__footer">
