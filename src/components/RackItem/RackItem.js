@@ -36,9 +36,7 @@ function RackItem(props) {
   } else {
     return (
       <li className="RackItem">
-        <span className="RackItem__infoName">
-          This rack has no clothing items.
-        </span>
+        <span className="RackItem__infoName">This rack has no items.</span>
       </li>
     );
   }

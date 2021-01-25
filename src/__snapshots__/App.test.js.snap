@@ -2,43 +2,116 @@
 
 exports[`App component renders without error 1`] = `
 <Fragment>
-  <Header />
-  <Switch>
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/"
-    />
-    <Route
-      component={[Function]}
-      path="/sign-in"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/racks"
-    />
-    <Route
-      component={[Function]}
-      path="/racks/:rackId"
-    />
-    <Route
-      component={[Function]}
-      path="/add-rack"
-    />
-    <Route
-      component={[Function]}
-      path="/edit-rack/:rackId"
-    />
-    <Route
-      component={[Function]}
-      path="/add-rack-item"
-    />
-    <Route
-      component={[Function]}
-      path="/edit-rack-item/:rackItemId"
-    />
-  </Switch>
-  <Footer />
+  <ContextProvider
+    value={
+      Object {
+        "addRack": [Function],
+        "rackItems": Array [
+          Object {
+            "id": "7c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "H&M Navy Hoody",
+            "price": 50,
+            "rackId": "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www2.hm.com/en_us/index.html",
+          },
+          Object {
+            "id": "6c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "Columbia Rain Jacket",
+            "price": 75,
+            "rackId": "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www.columbia.com/",
+          },
+          Object {
+            "id": "5c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "Mountain Hardware Long Sleeve Shirt",
+            "price": 25,
+            "rackId": "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www.mountainhardwear.com/",
+          },
+          Object {
+            "id": "4c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "APC Raw Denim Jeans",
+            "price": 200,
+            "rackId": "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www.apc-us.com/collections/men-denim",
+          },
+          Object {
+            "id": "3c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "H&M V Neck Tshirts",
+            "price": 25,
+            "rackId": "8d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www2.hm.com/en_us/index.html",
+          },
+          Object {
+            "id": "2c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "Express Oxford Shirt",
+            "price": 25,
+            "rackId": "8d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www.express.com/",
+          },
+          Object {
+            "id": "1c76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "name": "Prana Dock Shorts",
+            "price": 75,
+            "rackId": "8d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "url": "https://www.prana.com/",
+          },
+        ],
+        "racks": Array [
+          Object {
+            "id": "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "rackName": "Fall 2021",
+          },
+          Object {
+            "id": "8d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "rackName": "Summer 2021",
+          },
+          Object {
+            "id": "7d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
+            "rackName": "Anniversary Outfit",
+          },
+        ],
+      }
+    }
+  >
+    <Header />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/sign-in"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/racks"
+      />
+      <Route
+        component={[Function]}
+        path="/racks/:rackId"
+      />
+      <Route
+        component={[Function]}
+        path="/add-rack"
+      />
+      <Route
+        component={[Function]}
+        path="/edit-rack/:rackId"
+      />
+      <Route
+        component={[Function]}
+        path="/add-rack-item"
+      />
+      <Route
+        component={[Function]}
+        path="/edit-rack-item/:rackItemId"
+      />
+    </Switch>
+    <Footer />
+  </ContextProvider>
 </Fragment>
 `;

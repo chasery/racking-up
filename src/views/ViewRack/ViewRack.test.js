@@ -4,9 +4,9 @@ import toJson from "enzyme-to-json";
 import ViewRack from "./ViewRack";
 
 jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"), // use actual for all non-hook parts
+  ...jest.requireActual("react-router-dom"),
   useParams: () => ({
-    rackId: "1",
+    rackId: "9d76e150-95ee-4cf1-8b4f-fbd4934a4eed",
   }),
 }));
 
