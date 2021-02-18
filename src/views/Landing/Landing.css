@@ -6,6 +6,7 @@
 }
 .Hero .Form {
   margin: 1.5rem 1.5rem -3rem 1.5rem;
+  min-width: calc(100% - 6rem);
 }
 
 .AppInfo {
@@ -21,6 +22,9 @@
   .Hero__wrapper {
     display: flex;
     justify-content: flex-end;
+  }
+  .Hero .Form {
+    min-width: auto;
   }
 }
 
