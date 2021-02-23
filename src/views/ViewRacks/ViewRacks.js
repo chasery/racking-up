@@ -8,7 +8,7 @@ function ViewRacks(props) {
   const context = useContext(RacksContext);
 
   useEffect(() => {
-    context.clearError();
+    context.clearErrorState();
     RacksApiService.getRacks()
       .then(context.setRacksState)
       .catch(context.setErrorState);

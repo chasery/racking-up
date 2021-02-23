@@ -1,17 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import RackingUpContext from '../../RackingUpContext';
+import RacksContext from '../../contexts/RacksContext';
+import RacksApiService from '../../services/racks-api-service';
 import Rack from '../../components/Rack/Rack';
 import './ViewRack.css';
 
 function ViewRack(props) {
-  const context = useContext(RackingUpContext);
+  const context = useContext(RacksContext);
   const { rackId } = useParams();
 
-  const renderRack = (rackId) => {
-    const { id, rackName } = context.racks.find((rack) => rack.id === rackId);
+  useEffect(() => {
+    context.clearErrorState();
+    console.log(rackId);
+    RacksApiService.getRack(rackId)
+      .then(context.setRackState)
+      .catch(context.setErrorState);
 
-    return <Rack id={id} name={rackName} />;
+    return function cleanup() {
+      context.clearRackState();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const renderRack = () => {
+    const { rack_id, rack_name, items } = context.rack;
+
+    return <Rack id={rack_id} name={rack_name} items={items} />;
   };
 
   return (

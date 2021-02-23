@@ -22,10 +22,12 @@ function Rack(props) {
   };
 
   const getRackCost = (items) => {
-    let cost = 0;
-    items.map((item) => (cost += item.item_price));
+    if (items.length !== 0) {
+      let cost = 0;
+      items.map((item) => (cost += item.item_price));
 
-    return currencyFormat.format(cost);
+      return currencyFormat.format(cost);
+    }
   };
 
   return (

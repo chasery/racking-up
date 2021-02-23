@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 
+export const nullRack = {
+  rack_id: null,
+  rack_name: null,
+  user_id: null,
+  created_at: null,
+  items: [],
+};
+
 const RacksContext = React.createContext({
   racks: [],
   rack: {},
@@ -18,7 +26,7 @@ export default RacksContext;
 
 const RacksProvider = (props) => {
   const [racks, setRacks] = useState([]);
-  const [rack, setRack] = useState({});
+  const [rack, setRack] = useState(nullRack);
   const [error, setError] = useState(null);
 
   const setErrorState = (error) => {
@@ -38,8 +46,8 @@ const RacksProvider = (props) => {
     setRack(rack);
   };
 
-  const clearRackState = (rack) => {
-    setRack({});
+  const clearRackState = () => {
+    setRack(nullRack);
   };
 
   const addRack = (rack) => {

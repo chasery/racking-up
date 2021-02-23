@@ -12,7 +12,8 @@ function AddRack(props) {
   const history = useHistory();
 
   useEffect(() => {
-    context.clearError();
+    context.clearErrorState();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -40,26 +40,6 @@ function App() {
     };
   });
 
-  // const addRack = (rack) => setRacks((prevRacks) => [...prevRacks, rack]);
-  // // const editRack = (rack) => {};
-  // // const deleteRack = (rackId) => {};
-
-  // const addRackItem = (rackItem) =>
-  //   setRackItems((prevRackItems) => [...prevRackItems, rackItem]);
-  // // const editRackItem = (rackItem) => {};
-  // // const deleteRackItem = (rackItemId) => {};
-
-  // const contextValue = {
-  //   racks,
-  //   rackItems,
-  //   addRack,
-  //   // editRack: () => {},
-  //   // deleteRack: () => {},
-  //   addRackItem,
-  //   // editRackItem: () => {},
-  //   // deleteRackItem: () => {},
-  // };
-
   return (
     <>
       <Header location={location.pathname} />
