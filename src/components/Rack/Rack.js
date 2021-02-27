@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
+import RacksContext from '../../contexts/RacksContext';
+import RacksApiService from '../../services/racks-api-service';
 import RackItem from '../RackItem/RackItem';
 import { currencyFormat } from '../../currencyFormat';
 import './Rack.css';
 
 function Rack(props) {
+  const context = useContext(RacksContext);
   const history = useHistory();
   const { rackId } = useParams();
-  const { id, name, items } = props;
+  const { id, name, items = [] } = props;
+
+  const handleRackDelete = () => {
+    RacksApiService.deleteRack(id)
+      .then((res) => {
+        context.deleteRack(id);
+        history.push(`/racks`);
+      })
+      .catch(context.setErrorState);
+  };
 
   const createRackItems = (items) => {
     return items.map((item) => (
@@ -38,18 +50,22 @@ function Rack(props) {
             {'<-'}
           </Link>
           <span className='Rack__headerName'>{name}</span>
-          <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          {items.length !== 0 ? (
+            <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          ) : null}
           <div className='Rack__headerControls'>
             <button onClick={() => history.push(`/edit-rack/${rackId}`)}>
               E
             </button>
-            <button>D</button>
+            <button onClick={() => handleRackDelete()}>D</button>
           </div>
         </div>
       ) : (
         <Link to={`/racks/${id}`} className='Rack__header'>
           <span className='Rack__headerName'>{name}</span>
-          <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          {items.length !== 0 ? (
+            <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          ) : null}
           <span className='Rack__headerArrow'>{'->'}</span>
         </Link>
       )}

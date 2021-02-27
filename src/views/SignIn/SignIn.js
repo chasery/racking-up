@@ -8,7 +8,6 @@ function SignIn(props) {
   const history = useHistory();
 
   const handleSignInSuccess = () => {
-    // const { location, history } = props;
     const destination = (location.state || {}).from || '/racks';
 
     history.push(destination);

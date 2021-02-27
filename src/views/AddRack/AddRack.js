@@ -1,32 +1,22 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import RacksContext from '../../contexts/RacksContext';
 import RacksApiService from '../../services/racks-api-service';
 import Form from '../../components/Form/Form';
 import FormField from '../../components/FormField/FormField';
 import './AddRack.css';
 
 function AddRack(props) {
-  const context = useContext(RacksContext);
-  const [name, setName] = useState('');
   const history = useHistory();
-
-  useEffect(() => {
-    context.clearErrorState();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
 
   const handleAddRack = (e) => {
     e.preventDefault();
     RacksApiService.postRack({
       rack_name: name,
     })
-      .then((res) => {
-        context.addRack(res);
-        history.push(`/racks/${res.rack_id}`);
-      })
-      .catch(context.setErrorState);
+      .then((res) => history.push(`/racks/${res.rack_id}`))
+      .catch(setError);
   };
 
   return (
@@ -44,8 +34,11 @@ function AddRack(props) {
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
-            <button onClick={() => history.goBack()}>Cancel</button>
-            <button type='submit'>Add Rack</button>
+            {error ? <p className='Form__error'>{error}</p> : ''}
+            <div className='Form__controls'>
+              <button onClick={() => history.goBack()}>Cancel</button>
+              <button type='submit'>Add Rack</button>
+            </div>
           </Form>
         </div>
       </section>

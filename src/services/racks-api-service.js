@@ -38,7 +38,7 @@ const RacksApiService = {
   editRack(rackId, updatedRack) {
     const { rack_name } = updatedRack;
     return fetch(`${config.API_ENDPOINT}/racks/${rackId}`, {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'content-type': 'application/json',
         authorization: `bearer ${TokenService.getAuthToken()}`,
@@ -47,7 +47,7 @@ const RacksApiService = {
         rack_name: rack_name,
       }),
     }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.status
     );
   },
   deleteRack(rackId) {
@@ -58,7 +58,7 @@ const RacksApiService = {
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.status
     );
   },
 };

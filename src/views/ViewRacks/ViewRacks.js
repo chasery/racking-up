@@ -1,27 +1,39 @@
-import React, { useContext, useEffect } from 'react';
-import RacksContext from '../../contexts/RacksContext';
+import React, { useState, useEffect } from 'react';
 import RacksApiService from '../../services/racks-api-service';
 import RacksList from '../../components/RacksList/RacksList';
 import './ViewRacks.css';
 
 function ViewRacks(props) {
-  const context = useContext(RacksContext);
+  const [racks, setRacks] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    context.clearErrorState();
-    RacksApiService.getRacks()
-      .then(context.setRacksState)
-      .catch(context.setErrorState);
+    async function initState() {
+      try {
+        let apiCall = await RacksApiService.getRacks();
+        let res = await apiCall;
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        setRacks(res);
+      } catch (error) {
+        setError(error.error);
+      }
+    }
+
+    initState();
   }, []);
 
   return (
     <main role='main'>
       <section className='ViewRacks'>
         <div className='ViewRacks__wrapper'>
-          <h3>My Racks</h3>
-          <RacksList racks={context.racks} />
+          {error ? (
+            <p className='ViewRacks__error'>{error}</p>
+          ) : (
+            <>
+              <h3>My Racks</h3>
+              <RacksList racks={racks} />
+            </>
+          )}
         </div>
       </section>
     </main>

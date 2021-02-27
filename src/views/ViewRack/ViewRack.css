@@ -14,9 +14,10 @@
   margin: 0;
   padding: 0;
 }
-.ViewRack > li {
+
+/* .ViewRack > li {
   align-self: start;
-}
+} */
 .ViewRack__add {
   flex-grow: 0;
   padding: 1rem 1.5rem;
@@ -25,6 +26,10 @@
   background-color: #fff;
   font-weight: bold;
   text-align: center;
+}
+
+.ViewRack__error {
+  color: crimson;
 }
 
 @media all and (min-width: 30rem) {

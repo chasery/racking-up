@@ -4,11 +4,24 @@
   box-shadow: 0 0.0625rem 0.0625rem #0000001c;
   min-width: calc(100% - 3rem);
 }
-.Form > button {
+
+.Form__controls {
   margin-top: 2rem;
 }
-.Form > button + button {
+.Form__controls > button + button {
   margin-left: 0.5rem;
+}
+
+.Form__footer {
+  margin-bottom: 0;
+}
+
+.Form__error {
+  margin-bottom: 0;
+  color: crimson;
+}
+.Form__error + .Form__controls {
+  margin-top: 1rem;
 }
 
 @media all and (min-width: 30rem) {
