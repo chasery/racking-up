@@ -16,11 +16,10 @@
   margin-bottom: 0;
 }
 
-.Form__error {
+.Form .Error {
   margin-bottom: 0;
-  color: crimson;
 }
-.Form__error + .Form__controls {
+.Form .Error + .Form__controls {
   margin-top: 1rem;
 }
 

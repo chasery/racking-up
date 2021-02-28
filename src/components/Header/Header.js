@@ -38,7 +38,11 @@ function Header(props) {
     <header className='Header' role='banner'>
       <div className='Header__wrapper'>
         <h1 className='Header__title'>
-          <a href='/'>Racking Up</a>
+          {TokenService.hasAuthToken() ? (
+            <Link to='/racks'>Racking Up</Link>
+          ) : (
+            <Link to='/'>Racking Up</Link>
+          )}
         </h1>
         <nav className='Nav' role='navigation'>
           <ul>

@@ -21,7 +21,7 @@ function RacksList(props) {
     <ol className='RacksList'>
       {renderRacks(props.racks)}
       <li className='RacksList__add'>
-        <Link to='/add-rack'>+ Add Rack</Link>
+        <Link to='/racks/add-rack'>+ Add Rack</Link>
       </li>
     </ol>
   );

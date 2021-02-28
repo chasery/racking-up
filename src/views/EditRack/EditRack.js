@@ -3,6 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import RacksApiService from '../../services/racks-api-service';
 import Form from '../../components/Form/Form';
 import FormField from '../../components/FormField/FormField';
+import Error from '../../components/Error/Error';
 import './EditRack.css';
 
 function EditRack(props) {
@@ -11,7 +12,7 @@ function EditRack(props) {
   const [rack, setRack] = useState({});
   const [error, setError] = useState(null);
 
-  //Controlled form state
+  // Controlled form state
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -55,9 +56,10 @@ function EditRack(props) {
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
-            {error ? <p className='Form__error'>{error}</p> : ''}
+            {error ? <Error message={error} /> : null}
             <div className='Form__controls'>
               <button
+                type='button'
                 onClick={() =>
                   error
                     ? history.push(`/racks`)
@@ -66,7 +68,9 @@ function EditRack(props) {
               >
                 Cancel
               </button>
-              <button disabled={error}>Edit Rack</button>
+              <button type='submit' disabled={error}>
+                Edit Rack
+              </button>
             </div>
           </Form>
         </div>

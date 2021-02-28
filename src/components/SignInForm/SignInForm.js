@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthApiService from '../../services/auth-api-service';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
+import Error from '../Error/Error';
 import './SignInForm.css';
 
 function SignInForm(props) {
@@ -48,9 +49,9 @@ function SignInForm(props) {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
-      {error && <p className='Form__error'>{error}</p>}
+      {error ? <Error message={error} /> : null}
       <div className='Form__controls'>
-        <button>Sign In</button>
+        <button type='submit'>Sign In</button>
       </div>
       <p className='Form__footer'>
         Don't have an account? Sign up for a Racking Up account{' '}

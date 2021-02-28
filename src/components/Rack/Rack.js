@@ -1,24 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
-import RacksContext from '../../contexts/RacksContext';
 import RacksApiService from '../../services/racks-api-service';
 import RackItem from '../RackItem/RackItem';
+import Error from '../Error/Error';
 import { currencyFormat } from '../../currencyFormat';
 import './Rack.css';
 
 function Rack(props) {
-  const context = useContext(RacksContext);
   const history = useHistory();
   const { rackId } = useParams();
-  const { id, name, items = [] } = props;
+  const [error, setError] = useState(null);
+  const { id, name, items = [], deleteRackItem } = props;
 
   const handleRackDelete = () => {
     RacksApiService.deleteRack(id)
       .then((res) => {
-        context.deleteRack(id);
         history.push(`/racks`);
       })
-      .catch(context.setErrorState);
+      .catch(setError);
   };
 
   const createRackItems = (items) => {
@@ -29,6 +28,7 @@ function Rack(props) {
         name={item.item_name}
         url={item.item_url}
         price={item.item_price}
+        deleteRackItem={deleteRackItem}
       />
     ));
   };
@@ -44,7 +44,8 @@ function Rack(props) {
 
   return (
     <li className='Rack'>
-      {rackId ? (
+      {error ? <Error message={error} /> : null}
+      {rackId && !error ? (
         <div className='Rack__header'>
           <Link to={`/racks`} className='Rack__headerArrow'>
             {'<-'}
@@ -54,7 +55,7 @@ function Rack(props) {
             <span className='Rack__headerCost'>{getRackCost(items)}</span>
           ) : null}
           <div className='Rack__headerControls'>
-            <button onClick={() => history.push(`/edit-rack/${rackId}`)}>
+            <button onClick={() => history.push(`/racks/${rackId}/edit-rack`)}>
               E
             </button>
             <button onClick={() => handleRackDelete()}>D</button>

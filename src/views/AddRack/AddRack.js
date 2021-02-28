@@ -3,12 +3,15 @@ import { useHistory } from 'react-router-dom';
 import RacksApiService from '../../services/racks-api-service';
 import Form from '../../components/Form/Form';
 import FormField from '../../components/FormField/FormField';
+import Error from '../../components/Error/Error';
 import './AddRack.css';
 
 function AddRack(props) {
   const history = useHistory();
+  const [error, setError] = useState(null);
+
+  // Controlled form state
   const [name, setName] = useState('');
-  const [error, setError] = useState('');
 
   const handleAddRack = (e) => {
     e.preventDefault();
@@ -34,9 +37,11 @@ function AddRack(props) {
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
-            {error ? <p className='Form__error'>{error}</p> : ''}
+            {error ? <Error message={error} /> : null}
             <div className='Form__controls'>
-              <button onClick={() => history.goBack()}>Cancel</button>
+              <button type='button' onClick={() => history.push(`/racks`)}>
+                Cancel
+              </button>
               <button type='submit'>Add Rack</button>
             </div>
           </Form>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RacksApiService from '../../services/racks-api-service';
 import RacksList from '../../components/RacksList/RacksList';
+import Error from '../../components/Error/Error';
 import './ViewRacks.css';
 
 function ViewRacks(props) {
@@ -27,7 +28,7 @@ function ViewRacks(props) {
       <section className='ViewRacks'>
         <div className='ViewRacks__wrapper'>
           {error ? (
-            <p className='ViewRacks__error'>{error}</p>
+            <Error message={error} />
           ) : (
             <>
               <h3>My Racks</h3>

@@ -47,12 +47,15 @@ function App() {
         <Route exact path='/' component={Landing} />
         <PublicOnlyRoute path='/sign-in' component={SignIn} />
         <PrivateRoute exact path='/racks' component={ViewRacks} />
-        <PrivateRoute path='/racks/:rackId' component={ViewRack} />
-        <PrivateRoute path='/add-rack' component={AddRack} />
-        <PrivateRoute path='/edit-rack/:rackId' component={EditRack} />
-        <PrivateRoute path='/add-rack-item/:rackId' component={AddRackItem} />
+        <PrivateRoute exact path='/racks/add-rack' component={AddRack} />
+        <PrivateRoute exact path='/racks/:rackId' component={ViewRack} />
+        <PrivateRoute path='/racks/:rackId/edit-rack' component={EditRack} />
         <PrivateRoute
-          path='/edit-rack-item/:rackItemId'
+          path='/racks/:rackId/add-rack-item/'
+          component={AddRackItem}
+        />
+        <PrivateRoute
+          path='/racks/:rackId/edit-rack-item/:rackItemId'
           component={EditRackItem}
         />
       </Switch>

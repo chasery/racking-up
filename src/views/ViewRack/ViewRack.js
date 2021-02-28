@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import RacksApiService from '../../services/racks-api-service';
 import Rack from '../../components/Rack/Rack';
+import Error from '../../components/Error/Error';
 import './ViewRack.css';
 
 function ViewRack(props) {
@@ -24,21 +25,30 @@ function ViewRack(props) {
     initState();
   }, [rackId]);
 
+  const handleDeleteRackItem = (itemId) => {
+    const updatedItems = rack.items.filter((item) => item.item_id !== itemId);
+
+    setRack({ ...rack, items: updatedItems });
+  };
+
   return (
     <main role='main'>
       <section className='ViewRack'>
         <div className='ViewRack__wrapper'>
           {error ? (
-            <p className='ViewRack__error'>{error}</p>
+            <Error message={error} />
           ) : (
             <ol className='ViewRack__rack'>
               <Rack
                 id={rack.rack_id}
                 name={rack.rack_name}
                 items={rack.items}
+                deleteRackItem={handleDeleteRackItem}
               />
               <li className='ViewRack__add'>
-                <Link to={`/add-rack-item/${rackId}`}>+ Add Rack Item</Link>
+                <Link to={`/racks/${rackId}/add-rack-item`}>
+                  + Add Rack Item
+                </Link>
               </li>
             </ol>
           )}
