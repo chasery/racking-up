@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
-import Header from '../Header/Header';
+import { Route, Switch } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Landing from '../../views/Landing/Landing';
 import SignIn from '../../views/SignIn/SignIn';
@@ -17,8 +16,6 @@ import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import PrivateRoute from '../Utils/PrivateRoute';
 
 function App() {
-  const location = useLocation();
-
   useEffect(() => {
     // Auth/Token service effect
     const logoutFromIdle = () => {
@@ -42,7 +39,6 @@ function App() {
 
   return (
     <>
-      <Header location={location.pathname} />
       <Switch>
         <Route exact path='/' component={Landing} />
         <PublicOnlyRoute path='/sign-in' component={SignIn} />

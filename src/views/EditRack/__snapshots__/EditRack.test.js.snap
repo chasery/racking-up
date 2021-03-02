@@ -1,40 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditRack component renders without error 1`] = `
-<main
-  role="main"
->
-  <section
-    className="EditRack"
+<Fragment>
+  <Header />
+  <main
+    role="main"
   >
-    <div
-      className="EditRack__wrapper"
+    <section
+      className="EditRack"
     >
-      <Form
-        id="EditRack"
+      <div
+        className="EditRack__wrapper"
       >
-        <h2>
-          Edit Rack
-        </h2>
-        <p>
-          Edit the name of the rack.
-        </p>
-        <FormField
-          id="name"
-          isRequired={true}
-          label="Name"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-        <button>
-          Cancel
-        </button>
-        <button>
-          Edit Rack
-        </button>
-      </Form>
-    </div>
-  </section>
-</main>
+        <Form
+          id="EditRack"
+          onSubmit={[Function]}
+        >
+          <h2>
+            Edit Rack
+          </h2>
+          <p>
+            Edit the name of the rack.
+          </p>
+          <FormField
+            id="name"
+            isRequired={true}
+            label="Name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <div
+            className="Form__controls"
+          >
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              disabled={null}
+              type="submit"
+            >
+              Edit Rack
+            </button>
+          </div>
+        </Form>
+      </div>
+    </section>
+  </main>
+</Fragment>
 `;

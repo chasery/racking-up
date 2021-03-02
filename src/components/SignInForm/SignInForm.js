@@ -4,7 +4,6 @@ import AuthApiService from '../../services/auth-api-service';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
 import Error from '../Error/Error';
-import './SignInForm.css';
 
 function SignInForm(props) {
   const [email, setEmail] = useState('');

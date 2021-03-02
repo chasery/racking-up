@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import RackItemsApiService from '../../services/rack-items-api-service';
+import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import FormField from '../../components/FormField/FormField';
 import Error from '../../components/Error/Error';
@@ -48,50 +49,53 @@ function EditRackItem(props) {
   };
 
   return (
-    <main role='main'>
-      <section className='EditRackItem'>
-        <div className='EditRackItem__wrapper'>
-          <Form id='EditRackItem' onSubmit={(e) => handleEditRackItem(e)}>
-            <h2>Edit Rack Item</h2>
-            <p>Edit the information for the clothing item.</p>
-            <FormField
-              id='name'
-              label='Name'
-              type='text'
-              isRequired={true}
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-            />
-            <FormField
-              id='price'
-              label='Price'
-              type='text'
-              isRequired={true}
-              onChange={(e) => setPrice(e.target.value)}
-              value={price}
-            />
-            <FormField
-              id='url'
-              label='URL'
-              type='text'
-              isRequired={false}
-              onChange={(e) => setUrl(e.target.value)}
-              value={url}
-            />
-            {error ? <Error message={error} /> : null}
-            <div className='Form__controls'>
-              <button
-                type='button'
-                onClick={() => history.push(`/racks/${rackId}`)}
-              >
-                Cancel
-              </button>
-              <button type='submit'>Edit Rack Item</button>
-            </div>
-          </Form>
-        </div>
-      </section>
-    </main>
+    <>
+      <Header />
+      <main role='main'>
+        <section className='EditRackItem'>
+          <div className='EditRackItem__wrapper'>
+            <Form id='EditRackItem' onSubmit={(e) => handleEditRackItem(e)}>
+              <h2>Edit Rack Item</h2>
+              <p>Edit the information for the clothing item.</p>
+              <FormField
+                id='name'
+                label='Name'
+                type='text'
+                isRequired={true}
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              <FormField
+                id='price'
+                label='Price'
+                type='text'
+                isRequired={true}
+                onChange={(e) => setPrice(e.target.value)}
+                value={price}
+              />
+              <FormField
+                id='url'
+                label='URL'
+                type='text'
+                isRequired={false}
+                onChange={(e) => setUrl(e.target.value)}
+                value={url}
+              />
+              {error ? <Error message={error} /> : null}
+              <div className='Form__controls'>
+                <button
+                  type='button'
+                  onClick={() => history.push(`/racks/${rackId}`)}
+                >
+                  Cancel
+                </button>
+                <button type='submit'>Edit Rack Item</button>
+              </div>
+            </Form>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 

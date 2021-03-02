@@ -1,56 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditRackItem component renders without error 1`] = `
-<main
-  role="main"
->
-  <section
-    className="EditRackItem"
+<Fragment>
+  <Header />
+  <main
+    role="main"
   >
-    <div
-      className="EditRackItem__wrapper"
+    <section
+      className="EditRackItem"
     >
-      <Form
-        id="EditRackItem"
+      <div
+        className="EditRackItem__wrapper"
       >
-        <h2>
-          Edit Rack Item
-        </h2>
-        <p>
-          Edit the information for the clothing item.
-        </p>
-        <FormField
-          id="name"
-          isRequired={true}
-          label="Name"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-        <FormField
-          id="url"
-          isRequired={true}
-          label="URL"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-        <FormField
-          id="price"
-          isRequired={true}
-          label="Price"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-        <button>
-          Cancel
-        </button>
-        <button>
-          Edit Rack Item
-        </button>
-      </Form>
-    </div>
-  </section>
-</main>
+        <Form
+          id="EditRackItem"
+          onSubmit={[Function]}
+        >
+          <h2>
+            Edit Rack Item
+          </h2>
+          <p>
+            Edit the information for the clothing item.
+          </p>
+          <FormField
+            id="name"
+            isRequired={true}
+            label="Name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <FormField
+            id="price"
+            isRequired={true}
+            label="Price"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <FormField
+            id="url"
+            isRequired={false}
+            label="URL"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <div
+            className="Form__controls"
+          >
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+            >
+              Edit Rack Item
+            </button>
+          </div>
+        </Form>
+      </div>
+    </section>
+  </main>
+</Fragment>
 `;

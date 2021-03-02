@@ -5,3 +5,7 @@
 .FormField + .FormField {
   margin-top: 1rem;
 }
+
+.FormField__required {
+  color: crimson;
+}

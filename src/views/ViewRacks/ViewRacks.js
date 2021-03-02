@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RacksApiService from '../../services/racks-api-service';
+import Header from '../../components/Header/Header';
 import RacksList from '../../components/RacksList/RacksList';
 import Error from '../../components/Error/Error';
 import './ViewRacks.css';
@@ -24,20 +25,23 @@ function ViewRacks(props) {
   }, []);
 
   return (
-    <main role='main'>
-      <section className='ViewRacks'>
-        <div className='ViewRacks__wrapper'>
-          {error ? (
-            <Error message={error} />
-          ) : (
-            <>
-              <h3>My Racks</h3>
-              <RacksList racks={racks} />
-            </>
-          )}
-        </div>
-      </section>
-    </main>
+    <>
+      <Header />
+      <main role='main'>
+        <section className='ViewRacks'>
+          <div className='ViewRacks__wrapper'>
+            {error ? (
+              <Error message={error} />
+            ) : (
+              <>
+                <h3>My Racks</h3>
+                <RacksList racks={racks} />
+              </>
+            )}
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 

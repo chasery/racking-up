@@ -1,20 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ViewRacks component renders without error 1`] = `
-<main
-  role="main"
->
-  <section
-    className="ViewRacks"
+<Fragment>
+  <Header />
+  <main
+    role="main"
   >
-    <div
-      className="ViewRacks__wrapper"
+    <section
+      className="ViewRacks"
     >
-      <h3>
-        My Racks
-      </h3>
-      <RacksList />
-    </div>
-  </section>
-</main>
+      <div
+        className="ViewRacks__wrapper"
+      >
+        <h3>
+          My Racks
+        </h3>
+        <RacksList
+          racks={Array []}
+        />
+      </div>
+    </section>
+  </main>
+</Fragment>
 `;
