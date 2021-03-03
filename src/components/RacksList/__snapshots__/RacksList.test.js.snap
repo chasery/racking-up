@@ -8,7 +8,7 @@ exports[`RacksList component renders without error 1`] = `
     className="RacksList__add"
   >
     <Link
-      to="/add-rack"
+      to="/racks/add-rack"
     >
       + Add Rack
     </Link>

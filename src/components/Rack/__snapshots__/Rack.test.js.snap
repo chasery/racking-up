@@ -12,11 +12,6 @@ exports[`Rack component renders without error 1`] = `
       className="Rack__headerName"
     />
     <span
-      className="Rack__headerCost"
-    >
-      $0
-    </span>
-    <span
       className="Rack__headerArrow"
     >
       -&gt;

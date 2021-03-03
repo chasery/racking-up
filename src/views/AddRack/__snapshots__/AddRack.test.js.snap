@@ -1,45 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddRack component renders without error 1`] = `
-<main
-  role="main"
->
-  <section
-    className="AddRack"
+<Fragment>
+  <Header />
+  <main
+    role="main"
   >
-    <div
-      className="AddRack__wrapper"
+    <section
+      className="AddRack"
     >
-      <Form
-        id="AddRack"
-        onSubmit={[Function]}
+      <div
+        className="AddRack__wrapper"
       >
-        <h2>
-          Add Rack
-        </h2>
-        <p>
-          Enter the name of the rack you would like to add.
-        </p>
-        <FormField
-          id="name"
-          isRequired={true}
-          label="Name"
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-        <button
-          onClick={[Function]}
+        <Form
+          id="AddRack"
+          onSubmit={[Function]}
         >
-          Cancel
-        </button>
-        <button
-          type="submit"
-        >
-          Add Rack
-        </button>
-      </Form>
-    </div>
-  </section>
-</main>
+          <h2>
+            Add Rack
+          </h2>
+          <p>
+            Enter the name of the rack you would like to add.
+          </p>
+          <FormField
+            id="name"
+            isRequired={true}
+            label="Name"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <div
+            className="Form__controls"
+          >
+            <button
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+            >
+              Add Rack
+            </button>
+          </div>
+        </Form>
+      </div>
+    </section>
+  </main>
+</Fragment>
 `;

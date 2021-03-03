@@ -14,9 +14,7 @@
   margin: 0;
   padding: 0;
 }
-.ViewRack > li {
-  align-self: start;
-}
+
 .ViewRack__add {
   flex-grow: 0;
   padding: 1rem 1.5rem;

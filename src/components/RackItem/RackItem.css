@@ -1,5 +1,6 @@
 .RackItem {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .RackItem > * {
@@ -19,4 +20,10 @@
 }
 .RackItem__controls button + button {
   margin-left: 0.375rem;
+}
+
+.RackItem .Error {
+  flex-basis: 100%;
+  margin: 0;
+  text-align: center;
 }

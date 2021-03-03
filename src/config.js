@@ -1,4 +1,5 @@
+// eslint-disable-next-line
 export default {
-  API_ENDPOINT: 'http://localhost:8000/api',
+  API_ENDPOINT: 'https://shielded-garden-47156.herokuapp.com/api',
   TOKEN_KEY: 'racking-up-client-auth-token',
 };

@@ -1,72 +1,77 @@
-import React, { useContext } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
-import RackingUpContext from "../../RackingUpContext";
-import RackItem from "../RackItem/RackItem";
-import { currencyFormat } from "../../currencyFormat";
-import "./Rack.css";
+import React, { useState } from 'react';
+import { useParams, useHistory, Link } from 'react-router-dom';
+import RacksApiService from '../../services/racks-api-service';
+import RackItem from '../RackItem/RackItem';
+import Error from '../Error/Error';
+import { currencyFormat } from '../../currencyFormat';
+import './Rack.css';
 
 function Rack(props) {
-  const context = useContext(RackingUpContext);
   const history = useHistory();
   const { rackId } = useParams();
-  const { id, name } = props;
-  const filteredRackItems = context.rackItems.filter(
-    (item) => item.rackId === props.id
-  );
+  const [error, setError] = useState(null);
+  const { id, name, items = [], deleteRackItem } = props;
+
+  const handleRackDelete = () => {
+    RacksApiService.deleteRack(id)
+      .then((res) => {
+        history.push(`/racks`);
+      })
+      .catch(setError);
+  };
 
   const createRackItems = (items) => {
     return items.map((item) => (
       <RackItem
-        key={item.id}
-        id={item.id}
-        rackId={item.rackId}
-        name={item.name}
-        url={item.url}
-        price={item.price}
+        key={item.item_id}
+        id={item.item_id}
+        name={item.item_name}
+        url={item.item_url}
+        price={item.item_price}
+        deleteRackItem={deleteRackItem}
       />
     ));
   };
 
   const getRackCost = (items) => {
-    let cost = 0;
-    items.map((item) => (cost += item.price));
+    if (items.length !== 0) {
+      let cost = 0;
+      items.map((item) => (cost += item.item_price));
 
-    return currencyFormat.format(cost);
+      return currencyFormat.format(cost);
+    }
   };
 
   return (
-    <li className="Rack">
-      {rackId ? (
-        <div className="Rack__header">
-          <Link to={`/racks`} className="Rack__headerArrow">
-            {"<-"}
+    <li className='Rack'>
+      {error ? <Error message={error} /> : null}
+      {rackId && !error ? (
+        <div className='Rack__header'>
+          <Link to={`/racks`} className='Rack__headerArrow'>
+            {'<-'}
           </Link>
-          <span className="Rack__headerName">{name}</span>
-          <span className="Rack__headerCost">
-            {getRackCost(filteredRackItems)}
-          </span>
-          <div className="Rack__headerControls">
-            <button onClick={() => history.push(`/edit-rack/${rackId}`)}>
+          <span className='Rack__headerName'>{name}</span>
+          {items.length !== 0 ? (
+            <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          ) : null}
+          <div className='Rack__headerControls'>
+            <button onClick={() => history.push(`/racks/${rackId}/edit-rack`)}>
               E
             </button>
-            <button>D</button>
+            <button onClick={() => handleRackDelete()}>D</button>
           </div>
         </div>
       ) : (
-        <Link to={`/racks/${id}`} className="Rack__header">
-          <span className="Rack__headerName">{name}</span>
-          <span className="Rack__headerCost">
-            {getRackCost(filteredRackItems)}
-          </span>
-          <span className="Rack__headerArrow">{"->"}</span>
+        <Link to={`/racks/${id}`} className='Rack__header'>
+          <span className='Rack__headerName'>{name}</span>
+          {items.length !== 0 ? (
+            <span className='Rack__headerCost'>{getRackCost(items)}</span>
+          ) : null}
+          <span className='Rack__headerArrow'>{'->'}</span>
         </Link>
       )}
-      <ul className="Rack__items">
-        {filteredRackItems.length ? (
-          createRackItems(filteredRackItems)
-        ) : (
-          <RackItem />
-        )}
+      <ul className='Rack__items'>
+        {items.length ? createRackItems(items) : <RackItem />}
       </ul>
     </li>
   );

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders without error 1`] = `
+<Fragment>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <PublicOnlyRoute
+      component={[Function]}
+      path="/sign-in"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/racks"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/racks/add-rack"
+    />
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/racks/:rackId"
+    />
+    <PrivateRoute
+      component={[Function]}
+      path="/racks/:rackId/edit-rack"
+    />
+    <PrivateRoute
+      component={[Function]}
+      path="/racks/:rackId/add-rack-item/"
+    />
+    <PrivateRoute
+      component={[Function]}
+      path="/racks/:rackId/edit-rack-item/:rackItemId"
+    />
+  </Switch>
+  <Footer />
+</Fragment>
+`;
