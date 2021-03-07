@@ -24,6 +24,24 @@
   margin-top: 1.5rem;
 }
 
+.AppInfo__button {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #ead7dd;
+  color: #5e4352;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.125rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+.AppInfo__button:hover {
+  background-color: #dcbcc6;
+  box-shadow: inset 0 0.0625rem 0.0625rem #5e43521c;
+}
+
 @media all and (min-width: 30rem) {
   .Hero__wrapper {
     display: flex;
