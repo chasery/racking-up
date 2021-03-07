@@ -12,3 +12,9 @@ Run the tests `npm test`
 
 1. Run `npm install` to install required dependencies
 2. Run `npm start` to start application
+
+## Technologies
+
+* ReactJS
+* Knex
+* Jest
