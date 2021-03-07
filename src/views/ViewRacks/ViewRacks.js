@@ -34,7 +34,6 @@ function ViewRacks(props) {
               <Error message={error} />
             ) : (
               <>
-                <h3>My Racks</h3>
                 <RacksList racks={racks} />
               </>
             )}

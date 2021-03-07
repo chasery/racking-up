@@ -1,4 +1,5 @@
 .Form {
+  flex-grow: 1;
   background-color: #fffdff;
   box-shadow: 0 0.0625rem 0.0625rem #5e43521c;
   border-radius: 0.125rem;
