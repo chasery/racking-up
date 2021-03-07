@@ -4,6 +4,7 @@ import RacksApiService from '../../services/racks-api-service';
 import Header from '../../components/Header/Header';
 import Rack from '../../components/Rack/Rack';
 import Error from '../../components/Error/Error';
+import add from '../../assets/svg/add.svg';
 import './ViewRack.css';
 
 function ViewRack(props) {
@@ -49,7 +50,10 @@ function ViewRack(props) {
                   deleteRackItem={handleDeleteRackItem}
                 />
                 <li className='ViewRack__add'>
-                  <Link to={`/racks/${rackId}/add-rack-item`}>+ Item</Link>
+                  <Link to={`/racks/${rackId}/add-rack-item`}>
+                    <img src={add} alt='Add item' />
+                    <span>Item</span>
+                  </Link>
                 </li>
               </ol>
             )}
