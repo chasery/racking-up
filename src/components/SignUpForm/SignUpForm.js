@@ -15,7 +15,7 @@ function SignUpForm(props) {
     value: '',
     error: null,
   });
-  const [name, setName] = useState({ value: '', error: null });
+  // const [name, setName] = useState({ value: '', error: null });
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
@@ -25,13 +25,13 @@ function SignUpForm(props) {
     UsersApiService.postUser({
       email: email.value,
       password: password.value,
-      name: name.value,
+      // name: name.value,
     })
       .then((res) => {
         setEmail({ ...email, value: '' });
         setPassword({ ...password, value: '' });
         setPasswordConfirm({ ...password, value: '' });
-        setName({ ...name, value: '' });
+        // setName({ ...name, value: '' });
         history.push(`/sign-in`);
       })
       .catch((error) => {
@@ -41,48 +41,51 @@ function SignUpForm(props) {
 
   return (
     <Form id='Register' onSubmit={(e) => handleSubmit(e)}>
-      <h2>Sign up today!</h2>
-      <p>
-        Creating an account for Racking Up is easy! Fill out the information
-        below to create an account.
-      </p>
-      <FormField
-        id='email'
-        label='Email'
-        type='email'
-        isRequired={true}
-        onChange={(e) => setEmail({ ...email, value: e.target.value })}
-        value={email.value}
-      />
-      <FormField
-        id='password'
-        label='Password'
-        type='password'
-        isRequired={true}
-        onChange={(e) => setPassword({ ...password, value: e.target.value })}
-        value={password.value}
-      />
-      <FormField
-        id='passwordConfirm'
-        label='Password (Confirm)'
-        type='password'
-        isRequired={true}
-        onChange={(e) =>
-          setPasswordConfirm({ ...passwordConfirm, value: e.target.value })
-        }
-        value={passwordConfirm.value}
-      />
-      <FormField
-        id='name'
-        label='Name'
-        type='text'
-        isRequired={false}
-        onChange={(e) => setName({ ...name, value: e.target.value })}
-        value={name.value}
-      />
-      {error ? <Error message={error} /> : null}
-      <div className='Form__controls'>
-        <button type='submit'>Sign Up</button>
+      <div className='Form__header'>
+        <h2>Sign up today!</h2>
+      </div>
+      <div className='Form__body'>
+        <p>Creating an account is easy, just fill out the fields below.</p>
+        <FormField
+          id='email'
+          label='Email'
+          type='email'
+          isRequired={true}
+          onChange={(e) => setEmail({ ...email, value: e.target.value })}
+          value={email.value}
+        />
+        <FormField
+          id='password'
+          label='Password'
+          type='password'
+          isRequired={true}
+          onChange={(e) => setPassword({ ...password, value: e.target.value })}
+          value={password.value}
+        />
+        <FormField
+          id='passwordConfirm'
+          label='Password (Confirm)'
+          type='password'
+          isRequired={true}
+          onChange={(e) =>
+            setPasswordConfirm({ ...passwordConfirm, value: e.target.value })
+          }
+          value={passwordConfirm.value}
+        />
+        {/* <FormField
+          id='name'
+          label='Name'
+          type='text'
+          isRequired={false}
+          onChange={(e) => setName({ ...name, value: e.target.value })}
+          value={name.value}
+        /> */}
+        {error ? <Error message={error} /> : null}
+        <div className='Form__controls'>
+          <button className='Form__button action' type='submit'>
+            Sign Up
+          </button>
+        </div>
       </div>
       <p className='Form__footer'>
         Already have an account? Sign in to your Racking Up account{' '}

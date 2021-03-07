@@ -3,7 +3,10 @@
 body {
   position: relative;
   margin: 0;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #706b6d;
   background: #f8f2f4 url('./assets/images/background.jpg') top center no-repeat;
 }
 
@@ -22,13 +25,14 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
+  font-weight: 500;
 }
 
 ul {
@@ -37,6 +41,13 @@ ul {
 }
 ul > li {
   list-style: none;
+}
+
+a {
+  color: #5e4352;
+}
+a:hover {
+  color: #c08497;
 }
 
 /* React generated element */
