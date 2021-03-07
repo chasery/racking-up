@@ -5,52 +5,53 @@ exports[`SignUpForm component renders without error 1`] = `
   id="Register"
   onSubmit={[Function]}
 >
-  <h2>
-    Sign up today!
-  </h2>
-  <p>
-    Creating an account for Racking Up is easy! Fill out the information below to create an account.
-  </p>
-  <FormField
-    id="email"
-    isRequired={true}
-    label="Email"
-    onChange={[Function]}
-    type="email"
-    value=""
-  />
-  <FormField
-    id="password"
-    isRequired={true}
-    label="Password"
-    onChange={[Function]}
-    type="password"
-    value=""
-  />
-  <FormField
-    id="passwordConfirm"
-    isRequired={true}
-    label="Password (Confirm)"
-    onChange={[Function]}
-    type="password"
-    value=""
-  />
-  <FormField
-    id="name"
-    isRequired={false}
-    label="Name"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
   <div
-    className="Form__controls"
+    className="Form__header"
   >
-    <button
-      type="submit"
+    <h2>
+      Sign up today!
+    </h2>
+  </div>
+  <div
+    className="Form__body"
+  >
+    <p>
+      Creating an account is easy, just fill out the fields below.
+    </p>
+    <FormField
+      id="email"
+      isRequired={true}
+      label="Email"
+      onChange={[Function]}
+      type="email"
+      value=""
+    />
+    <FormField
+      id="password"
+      isRequired={true}
+      label="Password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <FormField
+      id="passwordConfirm"
+      isRequired={true}
+      label="Password (Confirm)"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <div
+      className="Form__controls"
     >
-      Sign Up
-    </button>
+      <button
+        className="Form__button action"
+        type="submit"
+      >
+        Sign Up
+      </button>
+    </div>
   </div>
   <p
     className="Form__footer"

@@ -16,50 +16,60 @@ exports[`EditRackItem component renders without error 1`] = `
           id="EditRackItem"
           onSubmit={[Function]}
         >
-          <h2>
-            Edit Rack Item
-          </h2>
-          <p>
-            Edit the information for the clothing item.
-          </p>
-          <FormField
-            id="name"
-            isRequired={true}
-            label="Name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-          <FormField
-            id="price"
-            isRequired={true}
-            label="Price"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-          <FormField
-            id="url"
-            isRequired={false}
-            label="URL"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
           <div
-            className="Form__controls"
+            className="Form__header"
           >
-            <button
-              onClick={[Function]}
-              type="button"
+            <h2>
+              Edit Item
+            </h2>
+          </div>
+          <div
+            className="Form__body"
+          >
+            <p>
+              Edit the information for the clothing item.
+            </p>
+            <FormField
+              id="name"
+              isRequired={true}
+              label="Name"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <FormField
+              id="price"
+              isRequired={true}
+              label="Price"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <FormField
+              id="url"
+              isRequired={false}
+              label="URL"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <div
+              className="Form__controls"
             >
-              Cancel
-            </button>
-            <button
-              type="submit"
-            >
-              Edit Rack Item
-            </button>
+              <button
+                className="Form__button secondary"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Form__button primary"
+                type="submit"
+              >
+                Edit Item
+              </button>
+            </div>
           </div>
         </Form>
       </div>

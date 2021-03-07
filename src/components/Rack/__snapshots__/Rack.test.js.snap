@@ -12,9 +12,12 @@ exports[`Rack component renders without error 1`] = `
       className="Rack__headerName"
     />
     <span
-      className="Rack__headerArrow"
+      className="Rack__headerArrow forward"
     >
-      -&gt;
+      <img
+        alt="View Rack"
+        src="chevron.svg"
+      />
     </span>
   </Link>
   <ul

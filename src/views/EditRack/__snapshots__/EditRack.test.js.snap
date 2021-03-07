@@ -16,35 +16,45 @@ exports[`EditRack component renders without error 1`] = `
           id="EditRack"
           onSubmit={[Function]}
         >
-          <h2>
-            Edit Rack
-          </h2>
-          <p>
-            Edit the name of the rack.
-          </p>
-          <FormField
-            id="name"
-            isRequired={true}
-            label="Name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
           <div
-            className="Form__controls"
+            className="Form__header"
           >
-            <button
-              onClick={[Function]}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              disabled={null}
-              type="submit"
-            >
+            <h2>
               Edit Rack
-            </button>
+            </h2>
+          </div>
+          <div
+            className="Form__body"
+          >
+            <p>
+              Edit the name of the rack.
+            </p>
+            <FormField
+              id="name"
+              isRequired={true}
+              label="Name"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <div
+              className="Form__controls"
+            >
+              <button
+                className="Form__button secondary"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Form__button primary"
+                disabled={null}
+                type="submit"
+              >
+                Edit Rack
+              </button>
+            </div>
           </div>
         </Form>
       </div>

@@ -12,9 +12,6 @@ exports[`ViewRacks component renders without error 1`] = `
       <div
         className="ViewRacks__wrapper"
       >
-        <h3>
-          My Racks
-        </h3>
         <RacksList
           racks={Array []}
         />

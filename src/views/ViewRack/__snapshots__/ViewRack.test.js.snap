@@ -24,7 +24,13 @@ exports[`ViewRack component renders without error 1`] = `
             <Link
               to="/racks/9d76e150-95ee-4cf1-8b4f-fbd4934a4eed/add-rack-item"
             >
-              + Add Rack Item
+              <img
+                alt="Add item"
+                src="add.svg"
+              />
+              <span>
+                Item
+              </span>
             </Link>
           </li>
         </ol>

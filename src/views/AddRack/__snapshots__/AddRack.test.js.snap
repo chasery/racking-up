@@ -16,34 +16,44 @@ exports[`AddRack component renders without error 1`] = `
           id="AddRack"
           onSubmit={[Function]}
         >
-          <h2>
-            Add Rack
-          </h2>
-          <p>
-            Enter the name of the rack you would like to add.
-          </p>
-          <FormField
-            id="name"
-            isRequired={true}
-            label="Name"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
           <div
-            className="Form__controls"
+            className="Form__header"
           >
-            <button
-              onClick={[Function]}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-            >
+            <h2>
               Add Rack
-            </button>
+            </h2>
+          </div>
+          <div
+            className="Form__body"
+          >
+            <p>
+              Enter the name of the rack you would like to add.
+            </p>
+            <FormField
+              id="name"
+              isRequired={true}
+              label="Name"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+            <div
+              className="Form__controls"
+            >
+              <button
+                className="Form__button secondary"
+                onClick={[Function]}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="Form__button primary"
+                type="submit"
+              >
+                Add Rack
+              </button>
+            </div>
           </div>
         </Form>
       </div>

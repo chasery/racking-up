@@ -10,7 +10,13 @@ exports[`RacksList component renders without error 1`] = `
     <Link
       to="/racks/add-rack"
     >
-      + Add Rack
+      <img
+        alt="Add rack"
+        src="add.svg"
+      />
+      <span>
+        Rack
+      </span>
     </Link>
   </li>
 </ol>
