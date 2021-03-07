@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import IdleService from '../../services/idle-service';
+import logo from '../../assets/svg/racking-up-logo.svg';
+import add from '../../assets/svg/add.svg';
 import './Header.css';
 
 function Header(props) {
@@ -17,7 +19,9 @@ function Header(props) {
   const renderSignIn = () => {
     return (
       <li>
-        <Link to='/sign-in'>Sign In</Link>
+        <Link className='Header__button primary' to='/sign-in'>
+          Sign In
+        </Link>
       </li>
     );
   };
@@ -25,7 +29,11 @@ function Header(props) {
   const renderSignOut = () => {
     return (
       <li>
-        <Link to='/' onClick={handleSignOut}>
+        <Link
+          className='Header__button secondary'
+          to='/'
+          onClick={handleSignOut}
+        >
           Sign Out
         </Link>
       </li>
@@ -35,7 +43,10 @@ function Header(props) {
   const renderAddRack = () => {
     return (
       <li>
-        <Link to='/racks/add-rack'>+ Add Rack</Link>
+        <Link className='Header__button primary' to='/racks/add-rack'>
+          <img src={add} alt='Add a rack' />
+          <span>Rack</span>
+        </Link>
       </li>
     );
   };
@@ -43,7 +54,13 @@ function Header(props) {
   const renderAddRackItem = () => {
     return (
       <li>
-        <Link to={`/racks/${rackId}/add-rack-item`}>+ Add Rack Item</Link>
+        <Link
+          className='Header__button primary'
+          to={`/racks/${rackId}/add-rack-item`}
+        >
+          <img src={add} alt='Add an item to your rack' />
+          <span>Item</span>
+        </Link>
       </li>
     );
   };
@@ -53,9 +70,19 @@ function Header(props) {
       <div className='Header__wrapper'>
         <h1 className='Header__title'>
           {TokenService.hasAuthToken() ? (
-            <Link to='/racks'>Racking Up</Link>
+            <Link to='/racks'>
+              <img src={logo} alt='Racking Up logo' />
+              <span>
+                Racking<span className='Header__titleColor'>Up</span>
+              </span>
+            </Link>
           ) : (
-            <Link to='/'>Racking Up</Link>
+            <Link to='/'>
+              <img src={logo} alt='Racking Up logo' />
+              <span>
+                Racking<span className='Header__titleColor'>Up</span>
+              </span>
+            </Link>
           )}
         </h1>
         <nav className='Nav' role='navigation'>

@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 body {
   position: relative;
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f2f4 url('./assets/images/background.jpg') top center no-repeat;
 }
 
 main {

@@ -89,7 +89,7 @@ function EditRackItem(props) {
                 >
                   Cancel
                 </button>
-                <button type='submit'>Edit Rack Item</button>
+                <button type='submit'>Edit Item</button>
               </div>
             </Form>
           </div>

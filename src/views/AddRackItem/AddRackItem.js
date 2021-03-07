@@ -70,7 +70,7 @@ function AddRackItem(props) {
                 >
                   Cancel
                 </button>
-                <button type='submit'>Add Rack Item</button>
+                <button type='submit'>Add Item</button>
               </div>
             </Form>
           </div>

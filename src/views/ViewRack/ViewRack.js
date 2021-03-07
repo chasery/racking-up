@@ -49,9 +49,7 @@ function ViewRack(props) {
                   deleteRackItem={handleDeleteRackItem}
                 />
                 <li className='ViewRack__add'>
-                  <Link to={`/racks/${rackId}/add-rack-item`}>
-                    + Add Rack Item
-                  </Link>
+                  <Link to={`/racks/${rackId}/add-rack-item`}>+ Item</Link>
                 </li>
               </ol>
             )}

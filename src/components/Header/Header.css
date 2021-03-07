@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-  background-color: white;
+  background-color: #fffdff;
   box-shadow: 0 0.125rem 0.125rem #0000001c;
 }
 .Header__wrapper {
@@ -11,14 +11,59 @@
   padding: 1rem 1.5rem;
 }
 .Header__title {
-  flex-grow: 1;
+  flex-shrink: 1;
+  height: 2.5rem;
+  overflow: hidden;
 }
 .Header__title > a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #5e4352;
+  font-weight: 500;
   text-decoration: none;
 }
+.Header__title > a > img {
+  margin-right: 0.75rem;
+}
+.Header__titleColor {
+  color: #c08497;
+}
+.Header__button {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #48323e;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.125rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+.Header__button > img {
+  position: relative;
+  top: 0.125rem;
+  margin-right: 0.5rem;
+}
+.Header__button.primary {
+  background-color: #ead7dd;
+}
+.Header__button.primary:hover {
+  background-color: #dcbcc6;
+}
+.Header__button.secondary {
+  background-color: transparent;
+}
+.Header__button.secondary:hover {
+  background-color: #ead7dd;
+}
 
+.Nav {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
 .Nav > ul {
   display: flex;
+  justify-content: flex-end;
 }
 .Nav > ul > li + li {
   margin-left: 1rem;
