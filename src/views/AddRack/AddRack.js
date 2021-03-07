@@ -30,22 +30,33 @@ function AddRack(props) {
         <section className='AddRack'>
           <div className='AddRack__wrapper'>
             <Form id='AddRack' onSubmit={(e) => handleAddRack(e)}>
-              <h2>Add Rack</h2>
-              <p>Enter the name of the rack you would like to add.</p>
-              <FormField
-                id='name'
-                label='Name'
-                type='text'
-                isRequired={true}
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-              />
-              {error ? <Error message={error} /> : null}
-              <div className='Form__controls'>
-                <button type='button' onClick={() => history.push(`/racks`)}>
-                  Cancel
-                </button>
-                <button type='submit'>Add Rack</button>
+              <div className='Form__header'>
+                <h2>Add Rack</h2>
+              </div>
+              <div className='Form__body'>
+                <p>Enter the name of the rack you would like to add.</p>
+                <FormField
+                  id='name'
+                  label='Name'
+                  type='text'
+                  isRequired={true}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
+                {error ? <Error message={error} /> : null}
+
+                <div className='Form__controls'>
+                  <button
+                    className='Form__button secondary'
+                    type='button'
+                    onClick={() => history.push(`/racks`)}
+                  >
+                    Cancel
+                  </button>
+                  <button className='Form__button primary' type='submit'>
+                    Add Rack
+                  </button>
+                </div>
               </div>
             </Form>
           </div>

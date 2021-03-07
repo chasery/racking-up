@@ -1,8 +1,7 @@
 .Footer {
   flex-shrink: 1;
   justify-self: flex-end;
-  color: #fafafa;
-  background-color: #474747;
+  background-color: #dbd3d5;
 }
 .Footer__wrapper {
   display: flex;
@@ -14,17 +13,12 @@
 }
 .Footer__contact > ul {
   display: flex;
+  margin-top: 0.5rem;
 }
 .Footer__contact > ul > li + li {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
-  border-left: 0.0625rem solid #fafafa56;
-}
-.Footer__contact a {
-  color: #fff;
-}
-.Footer__contact a:hover {
-  color: blue;
+  border-left: 0.0625rem solid #706b6d5b;
 }
 .Footer__copyright {
   flex-grow: 0;

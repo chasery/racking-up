@@ -4,6 +4,9 @@ import RacksApiService from '../../services/racks-api-service';
 import RackItem from '../RackItem/RackItem';
 import Error from '../Error/Error';
 import { currencyFormat } from '../../currencyFormat';
+import chevronIcon from '../../assets/svg/chevron.svg';
+import editIcon from '../../assets/svg/edit.svg';
+import deleteIcon from '../../assets/svg/delete.svg';
 import './Rack.css';
 
 function Rack(props) {
@@ -48,17 +51,23 @@ function Rack(props) {
       {rackId && !error ? (
         <div className='Rack__header'>
           <Link to={`/racks`} className='Rack__headerArrow'>
-            {'<-'}
+            <img src={chevronIcon} alt='View Racks' />
           </Link>
-          <span className='Rack__headerName'>{name}</span>
+          <Link to={`/racks`} className='Rack__headerName'>
+            {name}
+          </Link>
           {items.length !== 0 ? (
-            <span className='Rack__headerCost'>{getRackCost(items)}</span>
+            <Link to={`/racks`} className='Rack__headerCost'>
+              {getRackCost(items)}
+            </Link>
           ) : null}
           <div className='Rack__headerControls'>
             <button onClick={() => history.push(`/racks/${rackId}/edit-rack`)}>
-              E
+              <img src={editIcon} alt='Edit Rack' />
             </button>
-            <button onClick={() => handleRackDelete()}>D</button>
+            <button onClick={() => handleRackDelete()}>
+              <img src={deleteIcon} alt='Delete Rack' />
+            </button>
           </div>
         </div>
       ) : (
@@ -67,7 +76,9 @@ function Rack(props) {
           {items.length !== 0 ? (
             <span className='Rack__headerCost'>{getRackCost(items)}</span>
           ) : null}
-          <span className='Rack__headerArrow'>{'->'}</span>
+          <span className='Rack__headerArrow forward'>
+            <img src={chevronIcon} alt='View Rack' />
+          </span>
         </Link>
       )}
       <ul className='Rack__items'>

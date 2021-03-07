@@ -3,6 +3,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import RackItemsApiService from '../../services/rack-items-api-service';
 import Error from '../Error/Error';
 import { currencyFormat } from '../../currencyFormat';
+import editIcon from '../../assets/svg/edit.svg';
+import deleteIcon from '../../assets/svg/delete.svg';
 import './RackItem.css';
 
 function RackItem(props) {
@@ -49,10 +51,10 @@ function RackItem(props) {
                 history.push(`/racks/${rackId}/edit-rack-item/${id}`)
               }
             >
-              E
+              <img src={editIcon} alt='Edit Item' />
             </button>
             <button disabled={error} onClick={() => handleDelete(id)}>
-              D
+              <img src={deleteIcon} alt='Delete Item' />
             </button>
           </div>
         )}

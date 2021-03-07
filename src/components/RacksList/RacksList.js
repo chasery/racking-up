@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rack from '../Rack/Rack';
+import add from '../../assets/svg/add.svg';
 import './RacksList.css';
 
 function RacksList(props) {
@@ -21,7 +22,10 @@ function RacksList(props) {
     <ol className='RacksList'>
       {renderRacks(props.racks)}
       <li className='RacksList__add'>
-        <Link to='/racks/add-rack'>+ Add Rack</Link>
+        <Link to='/racks/add-rack'>
+          <img src={add} alt='Add rack' />
+          <span>Rack</span>
+        </Link>
       </li>
     </ol>
   );
