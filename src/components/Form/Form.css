@@ -21,7 +21,7 @@
 
 .Form__controls {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   margin-top: 1.5rem;
 }
 .Form__controls > button + button {

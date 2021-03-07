@@ -7,7 +7,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   color: #706b6d;
-  background: #f8f2f4 url('./assets/images/background.jpg') top center no-repeat;
+  background: #f8f2f4;
 }
 
 main {
@@ -55,4 +55,11 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+@media all and (min-width: 30rem) {
+  body {
+    background: #f8f2f4 url('./assets/images/background.jpg') top center
+      no-repeat;
+  }
 }

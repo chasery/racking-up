@@ -19,7 +19,7 @@ function Header(props) {
   const renderSignIn = () => {
     return (
       <li>
-        <Link className='Header__button primary' to='/sign-in'>
+        <Link className='Header__button secondary' to='/sign-in'>
           Sign In
         </Link>
       </li>

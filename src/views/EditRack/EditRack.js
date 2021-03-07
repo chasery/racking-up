@@ -49,31 +49,40 @@ function EditRack(props) {
         <section className='EditRack'>
           <div className='EditRack__wrapper'>
             <Form id='EditRack' onSubmit={(e) => handleEditRack(e)}>
-              <h2>Edit Rack</h2>
-              <p>Edit the name of the rack.</p>
-              <FormField
-                id='name'
-                label='Name'
-                type='text'
-                isRequired={true}
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-              />
-              {error ? <Error message={error} /> : null}
-              <div className='Form__controls'>
-                <button
-                  type='button'
-                  onClick={() =>
-                    error
-                      ? history.push(`/racks`)
-                      : history.push(`/racks/${rack.rack_id}`)
-                  }
-                >
-                  Cancel
-                </button>
-                <button type='submit' disabled={error}>
-                  Edit Rack
-                </button>
+              <div className='Form__header'>
+                <h2>Edit Rack</h2>
+              </div>
+              <div className='Form__body'>
+                <p>Edit the name of the rack.</p>
+                <FormField
+                  id='name'
+                  label='Name'
+                  type='text'
+                  isRequired={true}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
+                {error ? <Error message={error} /> : null}
+                <div className='Form__controls'>
+                  <button
+                    className='Form__button secondary'
+                    type='button'
+                    onClick={() =>
+                      error
+                        ? history.push(`/racks`)
+                        : history.push(`/racks/${rack.rack_id}`)
+                    }
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className='Form__button primary'
+                    type='submit'
+                    disabled={error}
+                  >
+                    Edit Rack
+                  </button>
+                </div>
               </div>
             </Form>
           </div>

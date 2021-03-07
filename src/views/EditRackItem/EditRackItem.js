@@ -55,41 +55,48 @@ function EditRackItem(props) {
         <section className='EditRackItem'>
           <div className='EditRackItem__wrapper'>
             <Form id='EditRackItem' onSubmit={(e) => handleEditRackItem(e)}>
-              <h2>Edit Rack Item</h2>
-              <p>Edit the information for the clothing item.</p>
-              <FormField
-                id='name'
-                label='Name'
-                type='text'
-                isRequired={true}
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-              />
-              <FormField
-                id='price'
-                label='Price'
-                type='text'
-                isRequired={true}
-                onChange={(e) => setPrice(e.target.value)}
-                value={price}
-              />
-              <FormField
-                id='url'
-                label='URL'
-                type='text'
-                isRequired={false}
-                onChange={(e) => setUrl(e.target.value)}
-                value={url}
-              />
-              {error ? <Error message={error} /> : null}
-              <div className='Form__controls'>
-                <button
-                  type='button'
-                  onClick={() => history.push(`/racks/${rackId}`)}
-                >
-                  Cancel
-                </button>
-                <button type='submit'>Edit Item</button>
+              <div className='Form__header'>
+                <h2>Edit Item</h2>
+              </div>
+              <div className='Form__body'>
+                <p>Edit the information for the clothing item.</p>
+                <FormField
+                  id='name'
+                  label='Name'
+                  type='text'
+                  isRequired={true}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
+                <FormField
+                  id='price'
+                  label='Price'
+                  type='text'
+                  isRequired={true}
+                  onChange={(e) => setPrice(e.target.value)}
+                  value={price}
+                />
+                <FormField
+                  id='url'
+                  label='URL'
+                  type='text'
+                  isRequired={false}
+                  onChange={(e) => setUrl(e.target.value)}
+                  value={url}
+                />
+                {error ? <Error message={error} /> : null}
+                <div className='Form__controls'>
+                  <button
+                    className='Form__button secondary'
+                    type='button'
+                    onClick={() => history.push(`/racks/${rackId}`)}
+                  >
+                    Cancel
+                  </button>
+                  <button className='Form__button primary' type='submit'>
+                    Edit Item
+                  </button>
+                </div>
               </div>
             </Form>
           </div>
