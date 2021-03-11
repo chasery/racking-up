@@ -10,8 +10,8 @@ function Landing(props) {
 
   const handleDemoSignIn = () => {
     AuthApiService.postLogin({
-      email: 'jim.halpert@racking-up.com',
-      password: 'DemoPassword!1',
+      email: process.env.REACT_APP_DEMO_ACCOUNT,
+      password: process.env.REACT_APP_DEMO_PASSWORD,
     })
       .then((res) => {
         history.push('/racks');
